@@ -21,6 +21,9 @@ import com.android.volley.toolbox.HurlStack;
 import com.android.volley.toolbox.StringRequest;
 import com.google.gson.Gson;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class MainActivity extends AppCompatActivity {
 
 
@@ -34,18 +37,16 @@ public class MainActivity extends AppCompatActivity {
         EditText editText=(EditText)findViewById(R.id.etxtNip);
         editText.setHint("Wprowadz Nip");
 
-        //String nip= editText.getText().toString();
-        String url="https://wl-test.mf.gov.pl//api/search/nip/1633802883?date=2021-12-05";
-                //"https://wl-api.mf.gov.pl//api/search/nip/5223014852?date=2021-12-05";
-
-        // "https://wl-test.mf.gov.pl//api/search/nip/"+nip+"?date=2021-12-05";
-                //"https://wl-test.mf.gov.pl//api/search/nip/5096781742?date=2021-12-05";
+        String nip= editText.getText().toString();
+        //"https://wl-api.mf.gov.pl//api/search/nip/5223014852?date=2021-12-05";
+        //"https://wl-test.mf.gov.pl//api/search/nip/5096781742?date=2021-12-05";
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-              //  String nip= editText.getText().toString();
-                // String url="https://wl-test.mf.gov.pl//api/search/nip/"+nip+"?date=2021-12-05";
+                String url= "https://wl-test.mf.gov.pl//api/search/nip/"+ editText.getText()+setDate();
+                //"https://wl-api.mf.gov.pl//api/search/nip/5223014852?date=2021-12-05";
+
                 volleyConection(url,txtStatus);
             }
         });
@@ -89,6 +90,14 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public String setDate()
+    {
+        Date date=new Date();
+        SimpleDateFormat formatDate = new SimpleDateFormat("yyyy-MM-dd");
+         System.out.println(formatDate.format(date));
+        String stringDate=formatDate.format(date);
+        return "?date="+stringDate;
+    }
 
 
 }
