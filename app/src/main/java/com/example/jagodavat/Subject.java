@@ -67,8 +67,7 @@ public class Subject {
     @Expose
     public Boolean hasVirtualAccounts;
 
-    public Subject()
-    {
+    public Subject() {
     }
 
     public Subject(String name, String nip, String statusVat, String regon, Object pesel, Object krs, Object residenceAddress, String workingAddress, List<Object> representatives, List<Object> authorizedClerks, List<Object> partners, String registrationLegalDate, Object registrationDenialBasis, Object registrationDenialDate, Object restorationBasis, Object restorationDate, Object removalBasis, Object removalDate, List<String> accountNumbers, Boolean hasVirtualAccounts) {

@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/txtStatus"
+        android:id="@+id/txtResponse"
         android:layout_width="284dp"
         android:layout_height="143dp"
         android:text="Hello World!"
@@ -17,28 +17,28 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/buttonSerach"
+        android:id="@+id/buttonSearch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="48dp"
         android:layout_marginBottom="72dp"
         android:text="Button"
-        app:layout_constraintBottom_toTopOf="@+id/txtStatus"
+        app:layout_constraintBottom_toTopOf="@+id/txtResponse"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/etxtNip"
+        app:layout_constraintStart_toEndOf="@+id/etxtInput"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.982" />
 
     <EditText
-        android:id="@+id/etxtNip"
+        android:id="@+id/etxtInput"
         android:layout_width="212dp"
         android:layout_height="49dp"
         android:layout_marginStart="28dp"
         android:layout_marginBottom="75dp"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/txtStatus"
+        app:layout_constraintBottom_toTopOf="@+id/txtResponse"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
