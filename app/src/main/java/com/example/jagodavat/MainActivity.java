@@ -14,12 +14,12 @@ import com.android.volley.Cache;
 import com.android.volley.Network;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.BasicNetwork;
 import com.android.volley.toolbox.DiskBasedCache;
 import com.android.volley.toolbox.HurlStack;
 import com.android.volley.toolbox.StringRequest;
+import com.example.jagodavat.response.ResponseModel;
 import com.google.gson.Gson;
 
 import java.text.SimpleDateFormat;
@@ -73,15 +73,15 @@ public class MainActivity extends AppCompatActivity {
         // Start the queue
         requestQueue.start();
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
-                new Response.Listener<String>() {
+                new com.android.volley.Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         Gson gson = new Gson();
-                        Root root = gson.fromJson(response, Root.class);
-                        txtResponse.setText(root.getVatStatus());
+                        ResponseModel responseModel = gson.fromJson(response, ResponseModel.class);
+                        txtResponse.setText(responseModel.getVatStatus());
                     }
                 },
-                new Response.ErrorListener() {
+                new com.android.volley.Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         Toast.makeText(MainActivity.this, "Request failed", Toast.LENGTH_LONG).show();
